@@ -14,7 +14,7 @@ client = caveclient.CAVEclient('v1dd', server_address='https://global.em.brain.a
 
 cv=client.info.segmentation_cloudvolume()
 position_viewer= np.array([63112, 94800, 9561])
-position = position_viewer*(np.array([9,9,45])/[9.7,9.7,45.0])
+position = position_viewer*(client.info.viewer_resolution()/cv.resolution)
 position=position.astype(np.int32)
 sv_id=cv.download_point(position_viewer, size=1,
                         coord_resolution=client.info.viewer_resolution(), 
