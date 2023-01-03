@@ -30,3 +30,13 @@ edges, affinities, areas = client.chunkedgraph.get_subgraph(root_id, bounds.T)
 
 agg_df = agglomerate_graph(edges, affinities, areas, 0)
 ```
+
+agg_df.head(5) will be 
+
+|    |                v0 |                v1 |   merged_affinity |   merged_area |
+|---:|------------------:|------------------:|------------------:|--------------:|
+|  0 | 85165423116943360 | 85165491836423040 |               inf |             1 |
+|  1 | 85094985653157920 | 85095054372679120 |               inf |             1 |
+|  2 | 85024685628614368 | 85024616909111344 |               inf |             1 |
+|  3 | 85024685628457040 | 85024616908964736 |               inf |             1 |
+|  4 | 85095054372634768 | 85095123092094480 |               inf |             1 |
